@@ -123,12 +123,12 @@ void CommandHandler::validateMapping() {
 Command CommandHandler::getCommand() {
     struct termios oldt, newt;
     char ch;
-    tcgetattr(STDIN_FILENO, &oldt);          // Сохраняем текущие настройки терминала
+    tcgetattr(STDIN_FILENO, &oldt);
     newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);        // Выключаем буферизацию и отображение ввода
+    newt.c_lflag &= ~(ICANON | ECHO);
     tcsetattr(STDIN_FILENO, TCSANOW, &newt); 
-    read(STDIN_FILENO, &ch, 1);              // Считываем один символ
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt); // Восстанавливаем настройки
+    read(STDIN_FILENO, &ch, 1);
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     if (!keyMapping.empty() && std::islower(keyMapping.begin()->first)) {
         ch = std::tolower(ch);
     } else if (!keyMapping.empty() && std::isupper(keyMapping.begin()->first)) {

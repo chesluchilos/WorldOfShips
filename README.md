@@ -7,23 +7,23 @@
 ### Скачать готовый образ
 
 ```bash
-sudo docker pull ghcr.io/chesluchilos/world-of-ships:1.0.0
+sudo docker pull ghcr.io/mihailmurdasov/world-of-ships:1.0.0
 ```
 
 ### Запуск
 
 ```bash
-sudo docker run --rm -it -v world-of-ships-data:/data ghcr.io/chesluchilos/world-of-ships:1.0.0
+sudo docker run --rm -it -v world-of-ships-data:/data ghcr.io/mihailmurdasov/world-of-ships:1.0.0
 ```
 
 ### Очистка
 
 ```bash
-sudo docker rm -f $(sudo docker ps -aq --filter ancestor=ghcr.io/chesluchilos/world-of-ships:1.0.0) 2>/dev/null || true
-sudo docker rm -f $(sudo docker ps -aq --filter ancestor=ghcr.io/chesluchilos/world-of-ships:latest) 2>/dev/null || true
+sudo docker rm -f $(sudo docker ps -aq --filter ancestor=ghcr.io/mihailmurdasov/world-of-ships:1.0.0) 2>/dev/null || true
+sudo docker rm -f $(sudo docker ps -aq --filter ancestor=ghcr.io/mihailmurdasov/world-of-ships:latest) 2>/dev/null || true
 sudo docker volume rm world-of-ships-data 2>/dev/null || true
-sudo docker image rm ghcr.io/chesluchilos/world-of-ships:1.0.0 2>/dev/null || true
-sudo docker image rm ghcr.io/chesluchilos/world-of-ships:latest 2>/dev/null || true
+sudo docker image rm ghcr.io/mihailmurdasov/world-of-ships:1.0.0 2>/dev/null || true
+sudo docker image rm ghcr.io/mihailmurdasov/world-of-ships:latest 2>/dev/null || true
 ```
 
 ---
